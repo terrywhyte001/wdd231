@@ -1,0 +1,26 @@
+@media screen and (min-width: 700px) {
+    nav ul {
+      display: flex !important;
+      justify-content: center;
+      gap: 1rem;
+    }
+  
+    #menu {
+      display: none;
+    }
+  
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2rem;
+    }
+  
+    section {
+      background: white;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+  }
+  
