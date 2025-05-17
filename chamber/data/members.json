@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Company One",
+        "address": "7 first Akugbe, adolor, ugbowo",
+        "phone": "2348068586884",
+        "website": "https://www.companyone.com",
+        "image": "sam.jpeg",
+        "membershipLevel": 1,
+        "additionalInfo": "Member since 2020"
+    },
+    {
+        "name": "Company Two",
+        "address": "456 uwasota, ojo, benin city, ST 12345",
+        "phone": "234-6858-6884",
+        "website": "https://www.companytwo.com",
+        "image": "company2.jpg",
+        "membershipLevel": 2,
+        "additionalInfo": "Silver member since 2019"
+    },
+    {
+        "name": "Company Three",
+        "address": "789 uwasota St, uwelu, ST 123456789",
+        "phone": "234-6858-6884",
+        "website": "https://www.companythree.com",
+        "image": "company3.jpg",
+        "membershipLevel": 3,
+        "additionalInfo": "Gold member since 2018"
+    },
+    {
+        "name": "Company Four",
+        "address": "321 Pine St, Hamlet, ST 24680",
+        "phone": "456-789-0123",
+        "website": "https://www.companyfour.com",
+        "image": "company4.jpg",
+        "membershipLevel": 1,
+        "additionalInfo": "Member since 2021"
+    },
+    {
+        "name": "Company Five",
+        "address": "654 Maple St, Metropolis, ST 98765",
+        "phone": "567-890-1234",
+        "website": "https://www.companyfive.com",
+        "image": "company5.jpg",
+        "membershipLevel": 2,
+        "additionalInfo": "Silver member since 2020"
+    },
+    {
+        "name": "Company Six",
+        "address": "987 Birch St, Capital City, ST 54321",
+        "phone": "678-901-2345",
+        "website": "https://www.companysix.com",
+        "image": "company6.jpg",
+        "membershipLevel": 3,
+        "additionalInfo": "Gold member since 2017"
+    },
+    {
+        "name": "Company Seven",
+        "address": "159 Cedar St, Smalltown, ST 11111",
+        "phone": "789-012-3456",
+        "website": "https://www.companyseven.com",
+        "image": "company7.jpg",
+        "membershipLevel": 1,
+        "additionalInfo": "Member since 2022"
+    }
+]
