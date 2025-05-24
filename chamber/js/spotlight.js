@@ -12,9 +12,9 @@ async function loadSpotlights() {
     // If your JSON is { "members": [...] }, use:
     // const { members } = await response.json();
 
-    // Adjust membership check for your data structure (number or string)
+    // Filter for gold or silver members (number or string)
     const premiumMembers = members.filter(
-      m => m.membership === 2 || m.membership === 3 || 
+      m => m.membership === 2 || m.membership === 3 ||
            m.membership === "silver" || m.membership === "gold"
     );
 
