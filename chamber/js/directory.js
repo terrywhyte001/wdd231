@@ -1,6 +1,7 @@
-const directoryContainer = document.getElementById('member-display');
-const gridBtn = document.getElementById('grid-view');
-const listBtn = document.getElementById('list-view');
+const directoryContainer = document.getElementById('directory-container');
+const toggleBtn = document.getElementById('toggle-view');
+
+let isGrid = true;
 
 // Fetch member data from JSON file
 async function fetchMembers() {
@@ -11,11 +12,12 @@ async function fetchMembers() {
 
 // Display members in the selected view
 function displayMembers(members) {
-    directoryContainer.innerHTML = ''; // Clear existing content
+    directoryContainer.innerHTML = '';
     members.forEach(member => {
         const memberCard = createMemberCard(member);
         directoryContainer.appendChild(memberCard);
     });
+    updateView();
 }
 
 // Create a member card element
@@ -34,19 +36,22 @@ function createMemberCard(member) {
 }
 
 // Toggle between grid and list view
-gridBtn.addEventListener('click', () => {
-    directoryContainer.classList.add('grid');
-    directoryContainer.classList.remove('list-view');
-    gridBtn.classList.add('active');
-    listBtn.classList.remove('active');
+toggleBtn.addEventListener('click', () => {
+    isGrid = !isGrid;
+    updateView();
 });
 
-listBtn.addEventListener('click', () => {
-    directoryContainer.classList.add('list-view');
-    directoryContainer.classList.remove('grid');
-    listBtn.classList.add('active');
-    gridBtn.classList.remove('active');
-});
+function updateView() {
+    if (isGrid) {
+        directoryContainer.classList.add('grid');
+        directoryContainer.classList.remove('list-view');
+        toggleBtn.textContent = "List View";
+    } else {
+        directoryContainer.classList.add('list-view');
+        directoryContainer.classList.remove('grid');
+        toggleBtn.textContent = "Grid View";
+    }
+}
 
 // Display the current year and last modified date
 document.getElementById('current-year').textContent = new Date().getFullYear();
