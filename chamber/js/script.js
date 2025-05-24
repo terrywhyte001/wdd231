@@ -10,7 +10,7 @@ async function fetchMembers() {
 }
 
 function displayMembers(members) {
-  directory.innerHTML = ""; // Clear previous content
+  directory.innerHTML = "";
   members.forEach(member => {
     const card = document.createElement("section");
     card.classList.add("member-card");
@@ -20,7 +20,6 @@ function displayMembers(members) {
       <p>${member.address}</p>
       <p>${member.phone}</p>
       <a href="${member.website}" target="_blank">Visit Website</a>
-      <p>Membership Level: ${member.membership ? member.membership : ''}</p>
     `;
     directory.appendChild(card);
   });
@@ -29,21 +28,16 @@ function displayMembers(members) {
 gridBtn.addEventListener("click", () => {
   directory.classList.add("grid-view");
   directory.classList.remove("list-view");
-  gridBtn.classList.add("active");
-  listBtn.classList.remove("active");
 });
 
 listBtn.addEventListener("click", () => {
   directory.classList.add("list-view");
   directory.classList.remove("grid-view");
-  listBtn.classList.add("active");
-  gridBtn.classList.remove("active");
 });
 
-// Footer date
-const yearSpan = document.getElementById("year");
-if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-const lastModSpan = document.getElementById("lastModified");
-if (lastModSpan) lastModSpan.textContent = document.lastModified;
+// Footer year and last modified
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;
 
+// Load members on page load
 fetchMembers();
