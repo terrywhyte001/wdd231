@@ -1,61 +1,42 @@
-const directoryContainer = document.getElementById('directory-container');
-const toggleBtn = document.getElementById('toggle-view');
+const directory = document.getElementById("directory");
+const gridBtn = document.getElementById("gridView");
+const listBtn = document.getElementById("listView");
 
-let isGrid = true;
-
-// Fetch member data from JSON file
+// Fetch members
 async function fetchMembers() {
-    const response = await fetch('data/members.json');
-    const members = await response.json();
-    displayMembers(members);
+  const response = await fetch("data/members.json");
+  const data = await response.json();
+  displayMembers(data);
 }
 
-// Display members in the selected view
 function displayMembers(members) {
-    directoryContainer.innerHTML = '';
-    members.forEach(member => {
-        const memberCard = createMemberCard(member);
-        directoryContainer.appendChild(memberCard);
-    });
-    updateView();
-}
-
-// Create a member card element
-function createMemberCard(member) {
-    const card = document.createElement('div');
-    card.classList.add('card');
+  directory.innerHTML = ""; // Clear previous content
+  members.forEach(member => {
+    const card = document.createElement("section");
+    card.classList.add("member-card");
     card.innerHTML = `
-        <img src="images/${member.image}" alt="${member.name}">
-        <h3>${member.name}</h3>
-        <p>${member.address}</p>
-        <p>${member.phone}</p>
-        <a href="${member.website}" target="_blank">Visit Website</a>
-        <p>Membership Level: ${member.membershipLevel}</p>
+      <img src="images/${member.image}" alt="${member.name} logo">
+      <h3>${member.name}</h3>
+      <p>${member.address}</p>
+      <p>${member.phone}</p>
+      <a href="${member.website}" target="_blank">Visit Website</a>
     `;
-    return card;
+    directory.appendChild(card);
+  });
 }
 
-// Toggle between grid and list view
-toggleBtn.addEventListener('click', () => {
-    isGrid = !isGrid;
-    updateView();
+gridBtn.addEventListener("click", () => {
+  directory.classList.add("grid-view");
+  directory.classList.remove("list-view");
 });
 
-function updateView() {
-    if (isGrid) {
-        directoryContainer.classList.add('grid');
-        directoryContainer.classList.remove('list-view');
-        toggleBtn.textContent = "List View";
-    } else {
-        directoryContainer.classList.add('list-view');
-        directoryContainer.classList.remove('grid');
-        toggleBtn.textContent = "Grid View";
-    }
-}
+listBtn.addEventListener("click", () => {
+  directory.classList.add("list-view");
+  directory.classList.remove("grid-view");
+});
 
-// Display the current year and last modified date
-document.getElementById('current-year').textContent = new Date().getFullYear();
-document.getElementById('last-modified').textContent = document.lastModified;
+// Footer date
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;
 
-// Initialize the app
 fetchMembers();
