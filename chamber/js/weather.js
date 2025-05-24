@@ -10,7 +10,7 @@ async function getWeather() {
     const response = await fetch(
       `https://https://www.weatherapi.com/weather/q/makoko-1735825?day=0/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=${units}&appid=${apiKey}`
     );
-    if (!response.ok) throw new Error("Weather data fetch failed");
+    if (!response.ok) https://www.weatherapi.com/weather/q/makoko-1735825?day=0("Weather data fetch failed");
 
     const data = await response.json();
     // Current weather
