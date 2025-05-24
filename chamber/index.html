@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to the Samuel Chamber of Commerce - promoting business growth and community engagement.">
+  <meta name="author" content="Evbosaru Iyen Samuel">
+  <meta property="og:title" content="Samuel Chamber of Commerce">
+  <meta property="og:description" content="Join the Samuel Chamber to grow your business and connect with the community.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:url" content="https://yourdomain.com/chamber/index.html">
+  <title>Samuel Chamber of Commerce | Welcome</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Samuel Chamber of Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="images/hero.jpg" alt="Welcome to Samuel Chamber">
+      <div class="hero-text">
+        <h2>Welcome to the Samuel Chamber of Commerce</h2>
+        <p>Promoting local businesses and building community.</p>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <a href="join.html" class="button">Join the Chamber</a>
+    </section>
+
+    <!-- Current Events -->
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li><strong>May 25:</strong> Small Business Expo</li>
+        <li><strong>June 5:</strong> Networking Luncheon</li>
+        <li><strong>June 15:</strong> Community Clean-Up Day</li>
+      </ul>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+      <h2>Current Weather</h2>
+      <div id="weather-data">
+        <p>Loading weather...</p>
+      </div>
+    </section>
+
+    <!-- Member Spotlights -->
+    <section class="spotlights">
+      <h2>Member Spotlights</h2>
+      <div id="spotlight-container" class="spotlight-cards">
+        <!-- Spotlight cards will be inserted here dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: info@sachamber.com | (234) 8068586884</p>
+    <p>&copy; <span id="year"></span> Samuel Chamber | WDD 231 | Last Updated: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="js/weather.js"></script>
+  <script src="js/spotlight.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+  </script>
+</body>
+
+</html>
