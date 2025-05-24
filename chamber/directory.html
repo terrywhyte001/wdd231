@@ -1,39 +1,57 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber of Commerce Directory">
+    
+    <title>[Benin city/Edo] Chamber of Commerce Directory</title>
+    <meta name="description" content="Explore the official business directory of the [Benin City/Edo] Chamber of Commerce. Find local businesses, services, and support our community.">
     <meta name="author" content="Evbosaru Iyen Samuel">
-    <meta property="og:title" content="Chamber of Commerce Directory">
-    <meta property="og:description" content="Find local businesses and services in your area.">
-    <meta property="og:image" content="images/favicon.ico">
-    <meta property="og:url" content="http://yourwebsite.com/chamber/directory.html">
+
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Chamber of Commerce Directory</title>
-</head>
+
+    <meta property="og:title" content="[Benin City/Edo] Chamber of Commerce Directory">
+    <meta property="og:description" content="Find local businesses and services in [Benin City/Edo]. Support our community members.">
+    <meta property="og:image" content="https://yourwebsite.com/chamber/images/og-directory-hero.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/chamber/directory.html">
+    <meta property="og:type" content="website"> <link rel="stylesheet" href="css/normalize.css"> <link rel="stylesheet" href="css/main.css">     <link rel="stylesheet" href="css/medium.css" media="(min-width: 480px)"> <link rel="stylesheet" href="css/large.css" media="(min-width: 768px)"> </head>
 <body>
     <header>
-        <h1>Chamber of Commerce Directory</h1>
+        <h1>[Benin City/Edo] Chamber of Commerce</h1>
+        
         <nav>
-            <ul>
-                <li><a href="directory.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <button id="menu-toggle" aria-label="Toggle navigation menu" class="menu-toggle">☰</button>
+            <ul id="main-nav-list" class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li class="active-page"><a href="directory.html">Directory</a></li> <li><a href="join.html">Join Us</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <section id="directory-container">
-            <!-- Member cards or list will be dynamically inserted here -->
-        </section>
-        <button id="toggle-view" aria-label="Toggle between grid and list view">Toggle View</button>
+        <h2>Business Directory</h2>
+
+        <div class="view-toggle">
+            <button id="grid-view" class="active" aria-label="Switch to grid view">Grid View</button>
+            <button id="list-view" aria-label="Switch to list view">List View</button>
+        </div>
+
+        <section id="member-display" class="grid">
+            <p>Loading member businesses...</p> </section>
     </main>
+
     <footer>
-        <p>&copy; <span id="current-year"></span> Evbosaru IyenSamuel | WDD 231 | Last modified: <span id="last-modified"></span></p>
+        <p>Contact: <a href="mailto:samuelterry0@gmail.com">samuelterry0@hmail.com</a> | Phone: <a href="tel:+2349016456241">(234) 8068586884</a></p>
+        <address>
+            123 Chamber Way<br>
+            [Benin city/edo], [Nigeria] [33000]<br>
+            <a href="https://www.google.com/maps/place/123+Chamber+Way,+Benin+City,+Edo,+Nigeria/@6.3391,5.6212,15z" target="_blank" rel="noopener noreferrer">View on Map</a>
+        </address>
+        
+        <p>&copy; <span id="current-year"></span> [Beni City
+            /Edo] Chamber | Evbosaru Iyen Samuel | WDD 231 | Last Modified: <span id="last-modified"></span></p>
     </footer>
-    <script src="js/directory.js"></script>
-</body>
+
+    <script src="js/main.js" defer></script>     <script src="js/members.js" defer></script>  </body>
 </html>

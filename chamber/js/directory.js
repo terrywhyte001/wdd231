@@ -1,7 +1,6 @@
-const directoryContainer = document.getElementById('directory-container');
-const toggleViewButton = document.getElementById('toggle-view');
-const footerLastModified = document.getElementById('last-modified');
-const currentYear = new Date().getFullYear();
+const directoryContainer = document.getElementById('member-display');
+const gridBtn = document.getElementById('grid-view');
+const listBtn = document.getElementById('list-view');
 
 // Fetch member data from JSON file
 async function fetchMembers() {
@@ -22,7 +21,7 @@ function displayMembers(members) {
 // Create a member card element
 function createMemberCard(member) {
     const card = document.createElement('div');
-    card.classList.add('member-card');
+    card.classList.add('card');
     card.innerHTML = `
         <img src="images/${member.image}" alt="${member.name}">
         <h3>${member.name}</h3>
@@ -35,8 +34,18 @@ function createMemberCard(member) {
 }
 
 // Toggle between grid and list view
-toggleViewButton.addEventListener('click', () => {
-    directoryContainer.classList.toggle('grid-view');
+gridBtn.addEventListener('click', () => {
+    directoryContainer.classList.add('grid');
+    directoryContainer.classList.remove('list-view');
+    gridBtn.classList.add('active');
+    listBtn.classList.remove('active');
+});
+
+listBtn.addEventListener('click', () => {
+    directoryContainer.classList.add('list-view');
+    directoryContainer.classList.remove('grid');
+    listBtn.classList.add('active');
+    gridBtn.classList.remove('active');
 });
 
 // Display the current year and last modified date
