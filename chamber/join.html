@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join the Chamber</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Basic layout for form and cards */
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    form {
+      flex: 1 1 300px;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1rem;
+    }
+
+    legend {
+      font-weight: bold;
+    }
+
+    /* Cards container and cards */
+    .cards-container {
+      flex: 1 1 300px;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+    }
+
+    .card {
+      background: #f0f0f0;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card a {
+      color: #007acc;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal[aria-hidden="false"] {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 400px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive: Cards below form on small screens */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+      .cards-container {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Your common header/navigation here -->
+  <header>
+    <h1>Samuel Chamber of Commerce</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="join.html" aria-current="page">Join</a> |
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <form method="get" action="thankyou.html" id="joinForm" novalidate>
+      <label for="firstName">
+        First Name:
+        <input type="text" id="firstName" name="firstName" title="Enter your first name" autocomplete="given-name" required />
+      </label>
+
+      <label for="lastName">
+        Last Name:
+        <input type="text" id="lastName" name="lastName" title="Enter your last name" autocomplete="family-name" required />
+      </label>
+
+      <label for="orgTitle">
+        Organizational Title:
+        <input type="text" id="orgTitle" name="orgTitle" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" placeholder="At least 7 characters: letters, spaces, hyphens" />
+      </label>
+
+      <label for="email">
+        Email:
+        <input type="email" id="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@example.com" required />
+      </label>
+
+      <label for="mobilePhone">
+        Mobile Phone:
+        <input type="tel" id="mobilePhone" name="mobilePhone" title="Enter your mobile phone number" autocomplete="tel" required />
+      </label>
+
+      <label for="businessName">
+        Business / Organization Name:
+        <input type="text" id="businessName" name="businessName" title="Enter your business or organization name" autocomplete="organization" required />
+      </label>
+
+      <fieldset>
+        <legend>Membership Level</legend>
+        <label><input type="radio" name="membershipLevel" value="NP Membership" checked /> NP Membership (No Fee)</label>
+        <label><input type="radio" name="membershipLevel" value="Bronze Membership" /> Bronze Membership</label>
+        <label><input type="radio" name="membershipLevel" value="Silver Membership" /> Silver Membership</label>
+        <label><input type="radio" name="membershipLevel" value="Gold Membership" /> Gold Membership</label>
+      </fieldset>
+
+      <label for="businessDescription">
+        Business Description:
+        <textarea id="businessDescription" name="businessDescription" title="Describe your business or organization"></textarea>
+      </label>
+
+      <input type="hidden" id="timestamp" name="timestamp" />
+
+      <input type="submit" value="Join Now" />
+    </form>
+
+    <section class="cards-container" aria-label="Membership Level Information">
+      <article class="card" tabindex="0">
+        <h3>NP Membership</h3>
+        <p>No fee for non-profit organizations.</p>
+        <a href="#npModal" class="open-modal" data-modal="npModal" role="button">Learn More</a>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Bronze Membership</h3>
+        <p>Basic benefits for small businesses.</p>
+        <a href="#bronzeModal" class="open-modal" data-modal="bronzeModal" role="button">Learn More</a>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Silver Membership</h3>
+        <p>More events, advertising, and discounts.</p>
+        <a href="#silverModal" class="open-modal" data-modal="silverModal" role="button">Learn More</a>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Gold Membership</h3>
+        <p>Top benefits, priority spotlight advertising.</p>
+        <a href="#goldModal" class="open-modal" data-modal="goldModal" role="button">Learn More</a>
+      </article>
+    </section>
+
+    <!-- Modals -->
+    <div id="npModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="npTitle" tabindex="-1">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2 id="npTitle">NP Membership Benefits</h2>
+        <p>No fees. Access to networking events.</p>
+      </div>
+    </div>
+
+    <div id="bronzeModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="bronzeTitle" tabindex="-1">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2 id="bronzeTitle">Bronze Membership Benefits</h2>
+        <ul>
+          <li>Access to basic events</li>
+          <li>Newsletter inclusion</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="silverModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="silverTitle" tabindex="-1">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2 id="silverTitle">Silver Membership Benefits</h2>
+        <ul>
+          <li>All Bronze benefits</li>
+          <li>Featured event invitations</li>
+          <li>Spotlight advertising</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="goldModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="goldTitle" tabindex="-1">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2 id="goldTitle">Gold Membership Benefits</h2>
+        <ul>
+          <li>All Silver benefits</li>
+          <li>Premium advertising positions</li>
+          <li>VIP event discounts</li>
+          <li>Training sessions</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Samuel Chamber of Commerce</p>
+  </footer>
+
+  <script>
+    // Set timestamp input to current datetime ISO string on page load
+    document.getElementById('timestamp').value = new Date().toISOString();
+
+    // Modal open/close handlers
+    const openModalButtons = document.querySelectorAll('.open-modal');
+    const modals = document.querySelectorAll('.modal');
+    const closeModalButtons = document.querySelectorAll('.close-modal');
+
+    openModalButtons.forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        const modalId = button.dataset.modal;
+        const modal = document.getElementById(modalId);
+        modal.setAttribute('aria-hidden', 'false');
+        modal.style.display = 'flex';
+        modal.querySelector('.close-modal').focus();
+      });
+    });
+
+    closeModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const modal = button.closest('.modal');
+        modal.setAttribute('aria-hidden', 'true');
+        modal.style.display = 'none';
+      });
+    });
+
+    // Close modals on ESC key
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        modals.forEach(modal => {
+          if (modal.getAttribute('aria-hidden') === 'false') {
+            modal.setAttribute('aria-hidden', 'true');
+            modal.style.display = 'none';
+          }
+        });
+      }
+    });
+
+    // Optional: trap focus inside open modal for better accessibility could be added later
+
+  </script>
+</body>
+</html>
