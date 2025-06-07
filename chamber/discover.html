@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Samuel Chamber Discover Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="medium.css" />
+</head>
+<body>
+  <header>
+    <h1>Samuel Chamber of Commerce - Discover Our Area</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html" aria-current="page">Discover</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <aside id="visitMessage" class="sidebar"></aside>
+
+    <section id="cards" class="cards-container" aria-label="Local points of interest">
+      <!-- Cards will be injected here by JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Samuel Chamber of Commerce</p>
+  </footer>
+
+  <!-- Link to items.json via fetch in script2.js -->
+  <script src="script2.js"></script>
+</body>
+</html>

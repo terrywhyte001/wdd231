@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Benin National Museum",
+    "address": "King's Square, Benin City",
+    "description": "A showcase of Benin's rich history and artifacts.",
+    "image": "images/museum.webp"
+  },
+  {
+    "name": "City Park",
+    "address": "456 Park Ave, Your City",
+    "description": "Beautiful park with walking trails and playgrounds.",
+    "image": "images/park.webp"
+  },
+  {
+    "name": "Art Gallery",
+    "address": "789 Art Blvd, Your City",
+    "description": "Showcasing local artists and rotating exhibitions.",
+    "image": "images/gallery.webp"
+  },
+  {
+    "name": "Community Theater",
+    "address": "101 Theater Ln, Your City",
+    "description": "Live performances and community events throughout the year.",
+    "image": "images/theater.webp"
+  },
+  {
+    "name": "Farmers Market",
+    "address": "202 Market St, Your City",
+    "description": "Fresh produce and handmade goods every weekend.",
+    "image": "images/market.webp"
+  },
+  {
+    "name": "Local Library",
+    "address": "303 Library Rd, Your City",
+    "description": "Books, resources, and programs for all ages.",
+    "image": "images/library.webp"
+  },
+  {
+    "name": "Riverwalk",
+    "address": "Along the River, Your City",
+    "description": "Scenic walking path along the river with cafes.",
+    "image": "images/riverwalk.webp"
+  },
+  {
+    "name": "Sports Arena",
+    "address": "404 Sports Dr, Your City",
+    "description": "Home to local sports teams and concerts.",
+    "image": "images/arena.webp"
+  }
+]
