@@ -1,0 +1,69 @@
+/* styles.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+
+/* Base styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+/* Headings use Montserrat */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #003366; /* Dark Blue */
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.75em;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 1.5em;
+}
+
+/* Section styling */
+section {
+  background-color: white;
+  border: 2px solid #003366; /* Dark Blue border */
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 51, 102, 0.1);
+}
+
+/* Lists styling */
+ul {
+  margin-left: 20px;
+  color: #333;
+}
+
+ul li {
+  margin-bottom: 0.5em;
+}
+
+/* Wireframe boxes */
+.wireframe-box {
+  border: 2px dashed #ff6600; /* Orange dashed border */
+  background-color: #fff5e6; /* Light orange background */
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  color: #cc5200; /* Darker orange text */
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Code style for inline code */
+code {
+  font-family: monospace, monospace;
+  background-color: #eee;
+  pad
