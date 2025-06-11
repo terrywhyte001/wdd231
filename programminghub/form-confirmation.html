@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Confirmation</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Thank You!</h1>
+    <p>Your feedback has been submitted successfully.</p>
+    <section id="form-data"></section>
+    <a href="index.html">Return Home</a>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const formDataSection = document.getElementById('form-data');
+    if (params.has('name') || params.has('email') || params.has('language') || params.has('feedback')) {
+      formDataSection.innerHTML = `
+        <h2>Your Submission</h2>
+        <ul>
+          <li><strong>Name:</strong> ${params.get('name') || ''}</li>
+          <li><strong>Email:</strong> ${params.get('email') || ''}</li>
+          <li><strong>Favorite Language:</strong> ${params.get('language') || ''}</li>
+          <li><strong>Feedback:</strong> ${params.get('feedback') || ''}</li>
+        </ul>
+      `;
+    }
+  </script>
+  <footer>
+    <p>Samuel Iyen Evbosaru &mdash; June 2025</p>
+    <a href="https://youtube.com/your-demo-video" target="_blank">Project Video</a>
+  </footer>
+</body>
+</html>

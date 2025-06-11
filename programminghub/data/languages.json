@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Python",
+    "year": 1991,
+    "creator": "Guido van Rossum",
+    "description": "A versatile, high-level programming language known for its readability and broad library support."
+  },
+  {
+    "name": "JavaScript",
+    "year": 1995,
+    "creator": "Brendan Eich",
+    "description": "The language of the web, used for interactive websites and web applications."
+  },
+  {
+    "name": "Java",
+    "year": 1995,
+    "creator": "James Gosling",
+    "description": "A class-based, object-oriented language designed to have as few implementation dependencies as possible."
+  },
+  {
+    "name": "C++",
+    "year": 1985,
+    "creator": "Bjarne Stroustrup",
+    "description": "An extension of C that includes object-oriented features and low-level memory manipulation."
+  },
+  {
+    "name": "C#",
+    "year": 2000,
+    "creator": "Anders Hejlsberg",
+    "description": "A modern, object-oriented language developed by Microsoft for building a wide range of applications."
+  },
+  {
+    "name": "Ruby",
+    "year": 1995,
+    "creator": "Yukihiro Matsumoto",
+    "description": "A dynamic, open source programming language with a focus on simplicity and productivity."
+  },
+  {
+    "name": "PHP",
+    "year": 1995,
+    "creator": "Rasmus Lerdorf",
+    "description": "A popular general-purpose scripting language that is especially suited to web development."
+  },
+  {
+    "name": "Go",
+    "year": 2009,
+    "creator": "Robert Griesemer, Rob Pike, Ken Thompson",
+    "description": "A statically typed, compiled language designed at Google for simplicity and reliability."
+  },
+  {
+    "name": "Swift",
+    "year": 2014,
+    "creator": "Apple Inc.",
+    "description": "A powerful and intuitive programming language for macOS, iOS, watchOS, and tvOS."
+  },
+  {
+    "name": "Kotlin",
+    "year": 2011,
+    "creator": "JetBrains",
+    "description": "A modern programming language that makes developers happier. Used for Android development."
+  },
+  {
+    "name": "TypeScript",
+    "year": 2012,
+    "creator": "Anders Hejlsberg",
+    "description": "A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale."
+  },
+  {
+    "name": "Rust",
+    "year": 2010,
+    "creator": "Graydon Hoare",
+    "description": "A language empowering everyone to build reliable and efficient software."
+  },
+  {
+    "name": "Scala",
+    "year": 2004,
+    "creator": "Martin Odersky",
+    "description": "A hybrid functional and object-oriented programming language for the JVM."
+  },
+  {
+    "name": "Perl",
+    "year": 1987,
+    "creator": "Larry Wall",
+    "description": "A high-level, general-purpose, interpreted, dynamic programming language."
+  },
+  {
+    "name": "MATLAB",
+    "year": 1984,
+    "creator": "Cleve Moler",
+    "description": "A high-performance language for technical computing, visualization, and programming."
+  }
+]
