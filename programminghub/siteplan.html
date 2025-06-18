@@ -57,7 +57,6 @@
     <div class="wireframe-box" style="height: 50px;">Footer</div>
   </section>
 
-  <!-- Add this new section below -->
   <section>
     <h2>Additional Setup</h2>
     <p>
@@ -76,5 +75,15 @@
       Future enhancements might include JavaScript or a backend service to handle dynamic content and user interaction.
     </p>
   </section>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+      mainNav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>

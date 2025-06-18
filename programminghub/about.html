@@ -12,14 +12,18 @@
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="languages.html">Languages</a>
-      <a href="about.html" aria-current="page">About</a>
-      <a href="siteplan.html">Site Plan</a>
-      <a href="attribution.html">Attributions</a>
-    </nav>
-  </header>
+  <button id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+    &#9776;
+  </button>
+  <nav id="main-nav">
+    <a href="index.html">Home</a>
+    <a href="languages.html">Languages</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a href="siteplan.html">Site Plan</a>
+    <a href="attribution.html">Attributions</a>
+  </nav>
+  <h1>Programming Hub</h1>
+</header>
   <main>
     <h1>About Programming Hub</h1>
     <section>
@@ -53,5 +57,14 @@
     <p>Samuel Iyen Evbosaru &mdash; June 2025</p>
     <a href="https://www.loom.com/share/d3a865b03a854f5ab62b5d5454a2b447?sid=a4041a0c-7fcd-436c-9ae0-f6bab004f0a3" target="_blank">Project Video</a>
   </footer>
+  <script>
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    mainNav.classList.toggle('open');
+  });
+</script>
 </body>
 </html>

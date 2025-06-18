@@ -22,7 +22,58 @@
   </header>
   <main>
     <h1>Programming Languages</h1>
-    <div id="languages-container"></div>
+    <div id="languages-container">
+      <div class="language-item" id="java" style="display:none;">
+        <h2>Java</h2>
+        <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="python" style="display:none;">
+        <h2>Python</h2>
+        <p>Python is an interpreted high-level general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="javascript" style="display:none;">
+        <h2>JavaScript</h2>
+        <p>JavaScript, often abbreviated as JS, is a high-level, dynamic, untyped, and interpreted programming language. It has become a standard for creating interactive web pages.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="csharp" style="display:none;">
+        <h2>C#</h2>
+        <p>C# is a modern, object-oriented programming language developed by Microsoft as part of its .NET initiative. It is used for a wide range of enterprise applications that run on the .NET Framework.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="php" style="display:none;">
+        <h2>PHP</h2>
+        <p>PHP is a popular general-purpose scripting language that is especially suited to web development. Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="swift" style="display:none;">
+        <h2>Swift</h2>
+        <p>Swift is a powerful and intuitive programming language for macOS, iOS, watchOS, and tvOS app development. It is designed to be easy to use and open source.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="go" style="display:none;">
+        <h2>Go</h2>
+        <p>Go, also known as Golang, is a statically typed, compiled programming language designed at Google. It is known for its simplicity, efficiency, and excellent support for concurrent programming.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="ruby" style="display:none;">
+        <h2>Ruby</h2>
+        <p>Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="kotlin" style="display:none;">
+        <h2>Kotlin</h2>
+        <p>Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference. It is designed to be fully interoperable with Java, and is officially supported by Google as a first-class language for Android development.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+      <div class="language-item" id="rust" style="display:none;">
+        <h2>Rust</h2>
+        <p>Rust is a multi-paradigm programming language focused on performance and safety, especially safe concurrency. It is syntactically similar to C++, but provides memory safety without using garbage collection.</p>
+        <button class="close-modal" aria-label="Close">Close</button>
+      </div>
+    </div>
   </main>
   <!-- Modal Dialog Structure -->
   <div id="modal" class="modal" style="display:none;">
@@ -36,5 +87,14 @@
     <a href="https://www.loom.com/share/d3a865b03a854f5ab62b5d5454a2b447?sid=a4041a0c-7fcd-436c-9ae0-f6bab004f0a3" target="_blank">Project Video</a>
   </footer>
   <script type="module" src="js/languages.js"></script>
+  <script>
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    mainNav.classList.toggle('open');
+  });
+</script>
 </body>
 </html>

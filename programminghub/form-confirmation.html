@@ -2,37 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Confirmation</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <meta name="description" content="Form confirmation page for Programming Hub feedback." />
-  <meta name="author" content="Samuel Iyen Evbosaru" />
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />/>
+  <title>About | Programming Hub</title>
+  <meta name="description" content="About Programming Hub: Learn about the site's purpose and scenarios." />
+  <meta name="author" content="Samuel Iyen Evbosaru" />age for Programming Hub feedback." />
+  <link rel="stylesheet" href="css/styles.css" />ru" />
+  <link rel="stylesheet" href="css/styles2.css" />
+  <link rel="icon" href="images/favicon.ico" />
+</head>>
+<body>1>Thank You!</h1>
+  <header>r feedback has been submitted successfully.</p>
+    <button id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">ion id="form-data"></section>
+      &#9776;e</a>
+    </button>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>ow.location.search);
+      <a href="languages.html">Languages</a>Id('form-data');
+      <a href="about.html" aria-current="page">About</a>rams.has('name') || params.has('email') || params.has('language') || params.has('feedback')) {
+      <a href="siteplan.html">Site Plan</a>ataSection.innerHTML = `
+      <a href="attribution.html">Attributions</a><h2>Your Submission</h2>
+    </nav>
+    <h1>Programming Hub</h1>><strong>Name:</strong> ${params.get('name') || ''}</li>
+  </header>:</strong> ${params.get('email') || ''}</li>
   <main>
-    <h1>Thank You!</h1>
-    <p>Your feedback has been submitted successfully.</p>
-    <section id="form-data"></section>
-    <a href="index.html">Return Home</a>
-  </main>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const formDataSection = document.getElementById('form-data');
-    if (params.has('name') || params.has('email') || params.has('language') || params.has('feedback')) {
-      formDataSection.innerHTML = `
-        <h2>Your Submission</h2>
-        <ul>
-          <li><strong>Name:</strong> ${params.get('name') || ''}</li>
-          <li><strong>Email:</strong> ${params.get('email') || ''}</li>
-          <li><strong>Favorite Language:</strong> ${params.get('language') || ''}</li>
-          <li><strong>Feedback:</strong> ${params.get('feedback') || ''}</li>
-        </ul>
-      `;
-    }
-  </script>
-  <footer>
-    <p>Samuel Iyen Evbosaru &mdash; June 2025</p>
-    <a href="https://www.loom.com/share/d3a865b03a854f5ab62b5d5454a2b447?sid=a4041a0c-7fcd-436c-9ae0-f6bab004f0a3" target="_blank">Project Video</a>
-  </footer>
+    <h1>About Programming Hub</h1><strong>Feedback:</strong> ${params.get('feedback') || ''}</li>
+    <section>
+      <h2>Site Purpose</h2>
+      <p>The site provides tutorials, practice problems, and programming tools designed to help beginners and intermediate learners improve their coding skills.</p>
+    </section>
+    <section>
+      <h2>Scenarios</h2>avToggle = document.getElementById('nav-toggle');
+      <ul>Nav = document.getElementById('main-nav');
+        <li>How can I learn Python basics step-by-step?</li>
+        <li>Where can I find tools to test my code online?</li>ttribute('aria-expanded') === 'true';
+      </ul>;
+    </section>
+    <form action="form-confirmation.html" method="get">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>/p>
+      <input type="email" id="email" name="email" required>5ab62b5d5454a2b447?sid=a4041a0c-7fcd-436c-9ae0-f6bab004f0a3" target="_blank">Project Video</a>
+      <label for="language">Favorite Language:</label>
+      <select name="language" id="language">
+        <option value="python">Python</option>        <option value="javascript">JavaScript</option>        <option value="java">Java</option>      </select>      <label for="feedback">Feedback:</label>      <textarea id="feedback" name="feedback"></textarea>      <button type="submit">Submit</button>    </form>  </main>  <footer>    <p>Samuel Iyen Evbosaru &mdash; June 2025</p>    <a href="https://www.loom.com/share/d3a865b03a854f5ab62b5d5454a2b447?sid=a4041a0c-7fcd-436c-9ae0-f6bab004f0a3" target="_blank">Project Video</a>  </footer>  <script>  const navToggle = document.getElementById('nav-toggle');  const mainNav = document.getElementById('main-nav');  navToggle.addEventListener('click', () => {    const expanded = navToggle.getAttribute('aria-expanded') === 'true';    navToggle.setAttribute('aria-expanded', !expanded);    mainNav.classList.toggle('open');
+  });
+</script>
 </body>
 </html>
